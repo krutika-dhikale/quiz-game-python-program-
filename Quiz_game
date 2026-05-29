@@ -1,0 +1,72 @@
+ans = "yes"
+
+while ans == "yes":
+    score = 0
+
+    print("***** PYTHON QUIZ GAME *****")
+
+    questions = [
+        {
+            "question": "1. Who founded Python?",
+            "options": [
+                "a) Alexander G. Bell",
+                "b) Vincent van Gogh",
+                "c) Leonardo da Vinci",
+                "d) Guido van Rossum"
+            ],
+            "answer": "d"
+        },
+        {
+            "question": "2. Which year was Python published?",
+            "options": ["a) 1981", "b) 1988", "c) 1991", "d) 1999"],
+            "answer": "c"
+        },
+        {
+            "question": "3. Which symbol is used for comments in Python?",
+            "options": ["a) //", "b) <!-- -->", "c) #", "d) **"],
+            "answer": "c"
+        },
+        {
+            "question": "4. What is Python?",
+            "options": [
+                "a) Programming language",
+                "b) Binary language",
+                "c) Computer language",
+                "d) None"
+            ],
+            "answer": "a"
+        },
+        {
+            "question": "5. Which function is used to take input from user?",
+            "options": ["a) print()", "b) input()", "c) int()", "d) len()"],
+            "answer": "b"
+        }
+    ]
+
+    for q in questions:
+        print("\n" + q["question"])
+
+        for option in q["options"]:
+            print(option)
+
+        user_answer = input("Enter your answer (a/b/c/d): ").lower()
+
+        if user_answer == q["answer"]:
+            print("Correct Answer ✅")
+            score += 1
+        else:
+            print("Wrong Answer ❌")
+
+    print("\n***** QUIZ COMPLETED *****")
+    print("Your Final Score is:", score, "/", len(questions))
+
+    if score == 5:
+        print("Excellent! 🎉")
+    elif score >= 3:
+        print("Good Job 👍")
+    elif score == 0:
+        print("Oops Sorry! All answers are wrong.")
+    else:
+        print("Keep Practicing 💪")
+
+    ans = input("\nDo you want to play again? (yes/no): ").lower()
